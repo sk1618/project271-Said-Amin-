@@ -4,7 +4,8 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: lightgrey; 
+    background-color: white; 
+    transition: background-color 0.3s, color 0.3s;
    }
     .bloc-container {
         display: flex;
@@ -280,4 +281,59 @@ header {
         transform: translateY(0);
     }
 }
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+/* Dark mode for elements */
+.dark-mode .bloc1 {
+    border-color: white;
+    background-color: #333;
+}
+
+.dark-mode .Create-budget,
+.dark-mode .title-name,
+.dark-mode .Add-title {
+    color: white;
+}
+
+/* Dark mode for progress bar */
+.dark-mode .progress-bar-container {
+    background-color: #444;
+}
+
+.dark-mode .progress-fill {
+    background-color: lightgreen;
+}
+
+/* Dark mode for buttons */
+.dark-mode .budget-creation,
+.dark-mode .details-button {
+    background-color: #007BFF;
+    color: white;
+}
+
+.dark-mode .budget-creation:hover,
+.dark-mode .details-button:hover {
+    background-color: #0056b3;
+}
+.dark-mode header {
+    background: black !important;
+}
+
+/* Dark mode for navigation links */
+.dark-mode .nav-links li a {
+    color: white !important;
+}
+
+/* Ensure hover effect still works */
+.dark-mode .nav-links li a:hover {
+    color: #007BFF !important;
+}
+.dark-mode .logo{
+    color: white;
+}
+
 
