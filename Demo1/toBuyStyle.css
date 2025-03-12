@@ -20,23 +20,36 @@ body {
 .container{
     width: 100%;
     min-height: 100vh;
-    background: lightgray;
+    /*background: lightgray;*/
     padding: 10px;
     animation: fadeIn 1s ease-out;
 }
-.todo-app{
+.todo-app {
     width: 100%;
     max-width: 540px;
     background: white;
     margin: 100px auto 20px;
     padding: 40px 30px 70px;
     border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
+    border: 2px solid #ddd; /* Adds a subtle border */
+}
+
+/* Dark mode styling for the box */
+body.dark-mode .todo-app {
+    background: #222; /* Darker background */
+    color: #f4f4f4; /* Light text */
+    border: 2px solid #444; /* Dark border */
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
 }
 .todo-app h2{
-    color: #002765;
+    color: black;
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+}
+body.dark-mode h2 {
+    color: white; 
 }
 .row{
     display: flex;
@@ -80,7 +93,7 @@ button{
     height: 28px;
     width: 28px;
     border-radius: 50%;
-    background-image: url(images/unchecked.png);
+    background-image: url('images/unchecked.png');
     background-size: cover;
     background-position: center;
     top: 12px;
@@ -182,4 +195,47 @@ header {
         opacity: 1;
         transform: translateY(0);
     }
+}
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #f4f4f4;
+}
+
+body.dark-mode .todo-app {
+    background: #333;
+    color: #f4f4f4;
+}
+
+body.dark-mode header {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+body.dark-mode .logo, 
+body.dark-mode .nav-links li a {
+    color: #f4f4f4;
+}
+
+body.dark-mode .nav-links li a:hover {
+    color: #007bff;
+}
+
+body.dark-mode .row {
+    background: #444;
+}
+
+body.dark-mode input {
+    background: transparent;
+    color: white;
+}
+
+body.dark-mode button {
+    background: #007bff;
+}
+
+body.dark-mode button:hover {
+    background: #0056b3;
+}
+body.dark-mode .todo-app ul li::before {
+    filter: invert(1); /* Inverts colors to make them visible */
 }
