@@ -17,8 +17,9 @@
         <nav>
             <a href="homePage.html" class="logo">Finoria</a>
             <ul class="nav-links">
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="transactions.html">Transactions</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="toBuy.html">Purchasing List</a></li>
+                <li><a href="expenses.html">Transactions</a></li>
                 <li><a href="#">Reports</a></li>
                 <li><a href="settings.html">Settings</a></li>
                 <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
@@ -51,6 +52,11 @@
                 <canvas id="chart3"></canvas>
             </div>
 
+            <div class="card">
+                <h3>To-Buy List 🛒</h3>
+                <ul id="dashboard-toBuyList"></ul>
+            </div>
+            
             <div class="card">
                 <h3>Calendar</h3>
                 <div class="calendar">
@@ -233,4 +239,47 @@
             }
         });
     });
+    document.addEventListener("DOMContentLoaded", function () {
+    function loadToBuyList() {
+        const toBuyListContainer = document.getElementById("dashboard-toBuyList");
+        const savedList = localStorage.getItem("data");
+
+        if (savedList) {
+            // Create a temporary container to manipulate the HTML
+            const tempContainer = document.createElement("div");
+            tempContainer.innerHTML = savedList;
+
+            // Remove all "❌" delete buttons
+            tempContainer.querySelectorAll("span").forEach(span => span.remove());
+
+            // Set the cleaned list to the dashboard
+            toBuyListContainer.innerHTML = tempContainer.innerHTML;
+        } else {
+            toBuyListContainer.innerHTML = "<li>No items yet</li>";
+        }
+    }
+
+    loadToBuyList();
+    window.addEventListener("storage", loadToBuyList);
+    });
+    if (localStorage.getItem("darkMode") === "enabled") {
+    document.body.classList.add("dark-mode");
+  }
+  // Function to apply dark mode styles dynamically to new elements
+function applyDarkModeToDynamicElements() {
+  if (localStorage.getItem("darkMode") === "enabled") {
+    document.body.classList.add("dark-mode");
+    
+    // Ensure dynamic elements also get dark mode styles
+    document.querySelectorAll('.to-buy-list-item').forEach(item => {
+      item.style.color = "#ffffff";
+      item.style.backgroundColor = "#333";
+    });
+  }
+}
+
+// Call the function on page load
+applyDarkModeToDynamicElements();
+
+
     </script>
