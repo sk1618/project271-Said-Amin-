@@ -1,4 +1,4 @@
- /* Pop-in animation */
+
  @keyframes popIn {
     0% {
         opacity: 0;
@@ -65,7 +65,7 @@ body {
 /* Main Content */
 .main-content {
     flex-grow: 1;
-    padding: 100px 20px 20px; /* Adjusted padding to account for fixed nav */
+    padding: 100px 20px 20px;
     width: 90%;
 }
 
@@ -76,7 +76,6 @@ body {
     margin-top: 20px;
 }
 
-/* Apply pop-in animation to the cards */
 .card {
     background: white;
     padding: 30px;
@@ -116,7 +115,6 @@ body {
     background-color: #0056b3; 
 }
 
-/* Apply pop-in animation to action buttons */
 .action-btn {
     display: inline-block;
     padding: 12px 24px;
@@ -127,7 +125,7 @@ body {
     border-radius: 5px;
     transition: background 0.3s ease, transform 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
-    animation: popIn 0.8s ease-out; /* Pop-in animation */
+    animation: popIn 0.8s ease-out; 
 }
 
 .action-btn:hover {
@@ -156,3 +154,120 @@ body {
         font-size: 32px;
     }
 }
+#dashboard-toBuyList {
+    margin-top: 30px;
+    padding-left: 15px; 
+}
+
+#dashboard-toBuyList li {  
+    padding: 8px 12px; 
+    margin: 5px 0; 
+    
+}
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #f4f4f4;
+  }
+  
+  body.dark-mode header {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  body.dark-mode .logo {
+    color: #f4f4f4;
+  }
+  
+  body.dark-mode .nav-links li a {
+    color: #f4f4f4;
+  }
+  
+  body.dark-mode .nav-links li a:hover {
+    color: #007bff;
+  }
+  
+  body.dark-mode .dashboard-container {
+    background-color: #333;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  body.dark-mode h1,
+  body.dark-mode h2 {
+    color: #f4f4f4;
+  }
+  
+  body.dark-mode .dashboard-card {
+    background-color: #444;
+    color: #f4f4f4;
+  }
+  
+  body.dark-mode .dashboard-card:hover {
+    background-color: #555;
+  }
+  
+  body.dark-mode .action-btn {
+    background-color: #007bff;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+  }
+  
+  body.dark-mode .action-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  body.dark-mode .action-btn:active {
+    background-color: #003366;
+  }
+
+body.dark-mode {
+    background-color: #121212;
+    color: #f4f4f4;
+  }
+  
+  body.dark-mode .dashboard-container {
+    background-color: #333;
+    color: #f4f4f4;
+  }
+  
+  body.dark-mode .dashboard-card {
+    background-color: #444;
+    color: #f4f4f4;
+    border: 1px solid #555;
+  }
+  
+  body.dark-mode h1,
+  body.dark-mode h2,
+  body.dark-mode .card h3,
+  body.dark-mode p {
+    color: #ffffff;
+  }
+  
+  body.dark-mode .to-buy-list {
+    background-color: #222; 
+    color: #f4f4f4; 
+    border: 1px solid #555;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  body.dark-mode .to-buy-list-item {
+    color: #ffffff;
+    background-color: #333; 
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+  }
+  body.dark-mode .card {
+    background-color: #222;
+    color: #ffffff; 
+    border: 1px solid #444; 
+}
+body.dark-mode .card p, 
+body.dark-mode .card span, 
+body.dark-mode .card input, 
+body.dark-mode .card ul, 
+body.dark-mode .card li {
+    color: #ffffff;
+}
+
+
+  
