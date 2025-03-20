@@ -225,8 +225,10 @@ body.dark-mode .row {
 }
 
 body.dark-mode input {
-    background: transparent;
+    background: #222; /* Dark background */
     color: white;
+    background: transparent;
+    border: none;
 }
 
 body.dark-mode button {
@@ -238,4 +240,18 @@ body.dark-mode button:hover {
 }
 body.dark-mode .todo-app ul li::before {
     filter: invert(1); /* Inverts colors to make them visible */
+}
+.delete-btn {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 20px;
+    color: red;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.delete-btn:hover {
+    transform: scale(1.2);
+    color: darkred;
 }
