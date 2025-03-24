@@ -18,6 +18,19 @@ body{
     justify-content: center;
 }
 
+.our-team {
+    text-align: center; 
+    padding-top: 50px;  
+  }
+  
+  
+  .our-team h1 {
+    font-size: 2.5rem;     
+    margin-bottom: 20px;    
+    color: white;            
+    font-weight: bold;    
+  }
+
 .swiper {
     position: relative;
     width: 90%;
