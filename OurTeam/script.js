@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     nameElement.dataset.originalText = nameElement.textContent; // Store original text
                 }
                 
-                // Toggle between "AUB STUDENT" and the original role
                 nameElement.textContent = 
                     nameElement.textContent === "AUB STUDENT" 
                     ? nameElement.dataset.originalText 
