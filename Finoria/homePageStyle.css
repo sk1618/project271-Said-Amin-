@@ -175,7 +175,6 @@ body.dark-mode .dropdown-content a:hover {
   background-color: #555;
 }
 
-/* Optional: Add a smooth fade-in animation */
 .dropdown-content {
   opacity: 0;
   visibility: hidden;
