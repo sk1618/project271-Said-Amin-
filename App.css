@@ -1,0 +1,340 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding-top: 70px; 
+  background-attachment: fixed;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease;
+}
+.container{
+  width: 100%;
+  min-height: 100vh;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+.todo-app {
+  width: 100%;
+  max-width: 540px;
+  background: white;
+  margin: 100px auto 20px;
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
+  border: 2px solid #ddd; /* Adds a subtle border */
+}
+
+/* Dark mode styling for the box */
+body.dark-mode .todo-app {
+  background: #222; 
+  color: #f4f4f4; /* Light text */
+  border: 2px solid #444; /* Dark border */
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+.todo-app h2{
+  color: black;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+body.dark-mode h2 {
+  color: white; 
+}
+.row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #edeef0;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+input{
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px;
+  font-weight: 14px;
+}
+
+button{
+  border: none;
+  outline: none;
+  padding: 16px 50px;
+  background: #007BFF ;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 40px;
+}
+
+.todo-app ul li {
+  list-style: none;
+  font-size: 17px;
+  padding: 12px 8px 12px 50px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+}
+.delete-btn{
+  border: none;
+  outline: none;
+  padding: 8px 8px;
+  background: #007BFF ;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 40px;
+}
+
+.todo-app ul li::before{
+  content: '';
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-image: url('images/unchecked.png');
+  background-size: cover;
+  background-position: center;
+  top: 12px;
+  left: 8px;
+}
+.todo-app ul li.checked{
+  color: #555;
+  text-decoration: line-through;
+}
+.todo-app ul li.checked::before{
+  background-image: url(images/checked.png);
+}
+.todo-app ul li span{
+  position: absolute;
+  right: 0;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  color: #555;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+}
+.todo-app ul li span:hover{
+  background: #edeef0;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 73px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+header:hover {
+  background: rgba(255, 255, 255, 1);
+}
+/* Make the logo clickable and preserve its original styles */
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%; 
+}
+
+.logo:hover {
+  color: #007bff; /* Highlight the logo on hover */
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(50px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+.chat-toggle-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 20px;
+  cursor: pointer;
+  z-index: 10000;
+  font-size: 16px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+}
+
+.chat-toggle-button:hover {
+  background-color: #0056b3;
+}
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #f4f4f4;
+}
+
+body.dark-mode .todo-app {
+  background: #333;
+  color: #f4f4f4;
+}
+
+body.dark-mode header {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+body.dark-mode .logo, 
+body.dark-mode .nav-links li a {
+  color: #f4f4f4;
+}
+
+body.dark-mode .nav-links li a:hover {
+  color: #007bff;
+}
+
+body.dark-mode .row {
+  background: #444;
+}
+
+body.dark-mode input {
+  background: #222; /* Dark background */
+  color: white;
+  background: transparent;
+  border: none;
+}
+
+body.dark-mode button {
+  background: #007bff;
+}
+
+body.dark-mode button:hover {
+  background: #0056b3;
+}
+body.dark-mode .todo-app ul li::before {
+  filter: invert(1); /* Inverts colors to make them visible */
+}
+.delete-btn {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 20px;
+  color: red;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  z-index: 10;  /* Ensure the delete button is on top of other elements */
+}
+
+.delete-btn:hover {
+  transform: scale(1.2);
+  color: darkred;
+}
+.check-btn {
+  position: absolute;
+  right: 60px; 
+  top: 5px;   
+  padding: 8px 8px;
+  font-size: 20px;
+  color: green;  
+  background-color: #007bff;
+  border-radius: 50%; 
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  z-index: 10;
+}
+
+.check-btn:hover {
+  transform: scale(1.1); 
+}
+
+.check-btn:active {
+  transform: scale(0.9); 
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 160px;
+  z-index: 1;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Dark Mode Styles for Dropdown */
+body.dark-mode .dropdown-content {
+  background-color: #333;
+  box-shadow: 0px 8px 16px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .dropdown-content a {
+  color: #fff;
+  border-bottom: 1px solid #555;
+}
+
+body.dark-mode .dropdown-content a:hover {
+  background-color: #555;
+}
+
+.dropdown-content {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-content a:last-child {
+  border-bottom: none;
+}
+
