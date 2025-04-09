@@ -1,0 +1,3 @@
+
+fix the items list buttons styling
+fix the add a category when no categroy is added from  overflowing

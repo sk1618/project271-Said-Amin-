@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+/* Main Section */
+section {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 40px 0;
+  text-align: center;
+  scroll-snap-align: start;
+}
+
+.hero-text {
+  font-size: 48px;
+  font-weight: 700;
+  margin-top: -20px;
+  margin-bottom: 20px;
+  color: #2c2c2c;
+  line-height: 1.2;
+  animation: fadeInUp 1s ease-out;
+  text-align: center; /* Move text to the left */
+  margin-left: 100px; /* Adjust left margin to add some space */
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.image-main {
+  display: flex;
+  justify-content: flex-start; /* Align images to the left */
+  align-items: center;
+  gap: 30px;
+  padding: 1.5rem;
+  margin-left: 200px;
+  animation: fadeInUp 1s ease-out;
+  animation-delay: 0.3s;
+  animation-fill-mode: both;
+  flex-direction: row; /* Ensure text and images are in the same row */
+  align-items: center; /* Vertically align the text and images */
+}
+
+.image-main img {
+  max-width: 480px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.image-main img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-down {
+  font-size: 48px;
+  font-weight: bold;
+  animation: bounce 2s infinite, glow 1.5s ease-in-out infinite alternate;
+  cursor: pointer;
+  margin-top: 0; /* Remove extra margin */
+  margin-left: 20px; /* Ensure the scroll-down arrow is aligned next to the text */
+  margin-top: 30px;
+  color: #007bff;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.scroll-down:hover {
+  color: #6392c5;
+  text-shadow: 0 0 25px rgba(214, 40, 40, 0.7);
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(12px);
+  }
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+  }
+}
+
+/* About, Features, Contact Sections */
+.about-container,
+.internships-container,
+.qas-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 30px auto;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.about-text,
+.internships-text,
+.qas-text {
+  flex: 1;
+  font-size: 22px;
+  font-weight: 500;
+  padding: 10px;
+}
+
+.image-about,
+.image-internships,
+.image-qas {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.image-about img,
+.image-internships img,
+.image-qas img {
+  width: 80%;
+  height: 80%;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.image-main img:hover,
+.image-about img:hover,
+.image-internships img:hover,
+.image-qas img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.button-container button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+  background-color: #6392c5;
+}
+
+.about-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.about-button:hover {
+  background-color: #6392c5;
+}
